@@ -4,12 +4,7 @@ import Link from "next/link";
 import { MobileNavSheet } from './mobilenavsheet';
 import { ColorModeToggle } from '../ColorModeToggle';
 
-type WebsiteHeadingProps = {
-    className?: string
-}
-
-const WebsiteHeading = (props: WebsiteHeadingProps) => {
-    const { className } = props;
+const WebsiteHeading = () => {
     
 
     const navLinks = [

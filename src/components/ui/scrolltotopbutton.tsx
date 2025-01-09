@@ -3,7 +3,6 @@
 import { motion, Variants, useAnimationControls } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { Button } from "@/components/ui/button";
 
 const isBrowser = () => typeof window !== 'undefined';
 

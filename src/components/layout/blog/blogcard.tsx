@@ -1,5 +1,3 @@
-import { Button } from '../../ui/button'
-import { ArrowRight } from "lucide-react"
 import Link from 'next/link';
 import { Badge } from '../../ui/badge';
 import Image from 'next/image';
@@ -31,7 +29,7 @@ const BlogCard = ({ PostTitle, PostSlug, PostDescription, PostCategory, PostTags
                 <div className="relative w-full md:h-36 lg:h-48">
                 <Image
                   className="hidden md:block lg:h-48 md:h-36 md:border-b-2 border-primary-border w-full object-cover object-center"
-                  src="/placeholder.png"
+                  src="/images/placeholder.png"
                   alt="blog"
                   layout="fill"
                   objectFit="cover"
