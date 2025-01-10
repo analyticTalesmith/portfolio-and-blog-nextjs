@@ -1,4 +1,3 @@
-import { HorizontalRule } from "../horizontalrule";
 import { ResponsiveSplitHeader } from "../responsive-split-header";
 import { FeatureCard, FeatureCardProps } from "../cards/featurecard";
 
@@ -11,7 +10,6 @@ type TripleFeatureProps = {
 
 const TripleFeature: React.FC<TripleFeatureProps> = ({
   header,
-  desc,
   features,
   children
 }) => {
