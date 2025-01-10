@@ -136,7 +136,7 @@ export default function Home() {
           </CardFooter>
         </Card>
 
-        <TripleFeature 
+        <TripleFeature
           header="Insights That Shape Decisions: The Blog"
           desc="A deep dive into data analytics, data science, people analytics, I/O psychology, digital marketing, business insights, and other related topics."
           features={featuresData}

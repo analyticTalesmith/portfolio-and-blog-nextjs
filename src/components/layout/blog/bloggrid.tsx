@@ -1,17 +1,12 @@
-import React from "react"
-import BlogCard from "../cards/blogcard"
+import React from "react";
+import BlogCard from "../cards/blogcard";
 
 type BlogGridProps = {
-    children: React.ReactElement<typeof BlogCard>[];
-}
+  children: React.ReactElement<typeof BlogCard>[];
+};
 
-const BlogGrid = ({ children}: BlogGridProps) => {
-
-    return (
-        <div className="items-start masonry-grid">
-        {children}
-        </div>
-    );
-    };
+const BlogGrid = ({ children }: BlogGridProps) => {
+  return <div className="items-start masonry-grid">{children}</div>;
+};
 
 export default BlogGrid;

@@ -24,15 +24,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     <div className={cn("w-full flex flex-row lg:flex-col", className)}>
       {imageUrl && imageAlt && (
         <div className="hidden w-10 mr-4 h-full md:block lg:w-full lg:h-48 md:h-36 relative rounded-lg overflow-hidden">
-          
-        <Link href={slug}>
-          <Image
-            className="md:border-b-2 border-primary-border w-full object-cover object-center"
-            src={imageUrl}
-            alt={imageAlt}
-            layout="fill"
-            objectFit="cover"
-          />
+          <Link href={slug}>
+            <Image
+              className="md:border-b-2 border-primary-border w-full object-cover object-center"
+              src={imageUrl}
+              alt={imageAlt}
+              layout="fill"
+              objectFit="cover"
+            />
           </Link>
         </div>
       )}

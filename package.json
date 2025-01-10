@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "push": "echo 'true' > ./out/.nojekyll && gh-pages -d out -b main -r https://github.com/analyticTalesmith/analyticTalesmith.github.io.git -f -t",
-    "deploy": "next build && next deploy",
+    "push": "echo 'true' > ./out/.nojekyll && gh-pages -d out -b main --repo https://github.com/analyticTalesmith/analyticTalesmith.github.io.git -f -t",
     "start": "next start",
     "lint": "next lint"
   },

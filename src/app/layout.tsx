@@ -11,13 +11,13 @@ import "./globals.css";
 
 const jost = Jost({
   variable: "--font-jost",
-  display: 'swap',
+  display: "swap",
   subsets: ["latin"],
 });
 
 const space_grotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
-  display: 'swap',
+  display: "swap",
   subsets: ["latin"],
 });
 
@@ -32,7 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jost.variable} ${space_grotesk.variable}`}suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${jost.variable} ${space_grotesk.variable}`}
+      suppressHydrationWarning
+    >
       <head />
       <body className="antialiased">
         <ThemeProvider
@@ -40,14 +44,12 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          >
-            <WebsiteHeading />
-            <ScrollProgressBar />
-            <ContentWrapper>
-              {children}
-            </ContentWrapper>
-            <ScrollToTopButton />
-            <WebsiteFooter />
+        >
+          <WebsiteHeading />
+          <ScrollProgressBar />
+          <ContentWrapper>{children}</ContentWrapper>
+          <ScrollToTopButton />
+          <WebsiteFooter />
         </ThemeProvider>
       </body>
     </html>
