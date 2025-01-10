@@ -16,9 +16,6 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-import { HorizontalRule } from "@/components/layout/horizontalrule";
-import { ResponsiveSplitHeader } from "@/components/layout/responsive-split-header";
-
 import {
   Card,
   CardContent,
