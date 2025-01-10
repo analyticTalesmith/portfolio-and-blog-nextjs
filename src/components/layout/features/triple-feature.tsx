@@ -23,7 +23,6 @@ const TripleFeature: React.FC<TripleFeatureProps> = ({ header, desc, features })
             key = {index}
             title={feature.title}
             desc={feature.desc}
-            // https://dummyimage.com/1203x503
             imageUrl={feature.imageUrl}
             imageAlt={feature.imageAlt}
             slug={feature.slug}
