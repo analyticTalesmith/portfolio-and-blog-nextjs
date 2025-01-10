@@ -1,8 +1,10 @@
 import Image from "next/image";
-import { Button } from '@/components/ui/button'
-import Container from "@/components/ui/container"
-import BlogCard from "@/components/layout/blog/blogcard";
+import { Button } from "@/components/ui/button";
+import Container from "@/components/ui/container";
+import BlogCard from "@/components/layout/cards/blogcard";
 import BlogGrid from "@/components/layout/blog/bloggrid";
+
+import { TripleFeature } from "@/components/layout/features/triple-feature";
 
 import {
   Pagination,
@@ -12,7 +14,10 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from '@/components/ui/pagination'
+} from "@/components/ui/pagination";
+
+import { HorizontalRule } from "@/components/layout/horizontalrule";
+import { ResponsiveSplitHeader } from "@/components/layout/responsive-split-header";
 
 import {
   Card,
@@ -21,44 +26,86 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from "@/components/ui/card";
 
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select'
+} from "@/components/ui/select";
+
+const featuresData = [
+  {
+    title: "The Future of People Analytics",
+    desc: "Explore how data shapes human resources and employee experiences.",
+    imageUrl: "https://dummyimage.com/1203x503",
+    imageAlt: "peopleAnalytics",
+    slug: "/blog/future-of-people-analytics",
+  },
+  {
+    title: "Data-Driven Marketing Strategies",
+    desc: "Uncover insights to optimize your marketing campaigns.",
+    imageUrl: "https://dummyimage.com/1203x503",
+    imageAlt: "peopleAnalytics",
+    slug: "/blog/data-driven-marketing",
+  },
+  {
+    title: "The Psychology of Leadership",
+    desc: "Discover the science behind effective leadership styles.",
+    imageUrl: "https://dummyimage.com/1203x503",
+    imageAlt: "peopleAnalytics",
+    slug: "/blog/psychology-of-leadership",
+  },
+];
 
 export default function Home() {
   return (
     <>
-    <Container>
-       <Image
-           className="dark:invert"
-           src="/next.svg"
-           alt="Next.js logo"
-           width={180}
-           height={38}
-           priority
-         />
+      <Container>
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
         <h1>Header 1</h1>
         <h2>Header 2</h2>
         <h3>Header 3</h3>
         <h4>Header 4</h4>
         <h5>Header 5</h5>
         <h6>Header 6</h6>
-        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Est ipsum sapien eleifend nisi mi cubilia fames suscipit vel. Condimentum eu fringilla, nec cubilia placerat faucibus. Auctor eleifend lacinia lacus nulla etiam litora facilisi class gravida. Ligula ultricies at ipsum nisl vel nostra. Mi finibus lacinia hendrerit morbi sapien laoreet risus. Lobortis nullam maximus risus, curae rutrum ultricies. Maecenas vivamus conubia per luctus, ante aliquet inceptos nibh. Potenti morbi fames magna a iaculis litora.</p>
-        <br/>
-        <p>Cubilia libero euismod, posuere dignissim consectetur facilisis. Sodales tortor iaculis ut feugiat mattis eleifend? Magna sapien donec sed praesent mi ipsum efficitur. Mus scelerisque morbi tristique pulvinar porta commodo. Malesuada mus purus dui varius pulvinar; nisi habitasse. Hendrerit curabitur curae porta etiam elementum netus diam at nullam.</p>
+        <p>
+          Lorem ipsum odor amet, consectetuer adipiscing elit. Est ipsum sapien
+          eleifend nisi mi cubilia fames suscipit vel. Condimentum eu fringilla,
+          nec cubilia placerat faucibus. Auctor eleifend lacinia lacus nulla
+          etiam litora facilisi class gravida. Ligula ultricies at ipsum nisl
+          vel nostra. Mi finibus lacinia hendrerit morbi sapien laoreet risus.
+          Lobortis nullam maximus risus, curae rutrum ultricies. Maecenas
+          vivamus conubia per luctus, ante aliquet inceptos nibh. Potenti morbi
+          fames magna a iaculis litora.
+        </p>
+        <br />
+        <p>
+          Cubilia libero euismod, posuere dignissim consectetur facilisis.
+          Sodales tortor iaculis ut feugiat mattis eleifend? Magna sapien donec
+          sed praesent mi ipsum efficitur. Mus scelerisque morbi tristique
+          pulvinar porta commodo. Malesuada mus purus dui varius pulvinar; nisi
+          habitasse. Hendrerit curabitur curae porta etiam elementum netus diam
+          at nullam.
+        </p>
         <h1>Card Component</h1>
         <Card className="w-[350px]">
           <CardHeader>
             <CardTitle>Create project</CardTitle>
-            <CardDescription>Deploy your new project in one-click.</CardDescription>
+            <CardDescription>
+              Deploy your new project in one-click.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form>
@@ -86,38 +133,46 @@ export default function Home() {
           </CardContent>
           <CardFooter className="flex justify-between">
             <Button buttoncolor="danger">Cancel</Button>
-            <Button variant="default" buttoncolor="secondary">Deploy</Button>
+            <Button variant="default" buttoncolor="secondary">
+              Deploy
+            </Button>
           </CardFooter>
         </Card>
-        <h1>Blog Grid</h1>
 
-    <div className="py-8">
-              <Pagination>
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious href="#" />
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#">1</PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#" isActive>
-                      2
-                    </PaginationLink>
-                  </PaginationItem>
-                  <div className="items-center md:flex hidden">
-                    <PaginationItem>
-                      <PaginationLink href="#">3</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationEllipsis />
-                    </PaginationItem>
-                  </div>
-                  <PaginationItem>
-                    <PaginationNext href="#" />
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>  </div>
+        <TripleFeature 
+          header="Insights That Shape Decisions: The Blog"
+          desc="A deep dive into data analytics, data science, people analytics, I/O psychology, digital marketing, business insights, and other related topics."
+          features={featuresData}
+        />
+
+        <div className="py-8">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#" isActive>
+                  2
+                </PaginationLink>
+              </PaginationItem>
+              <div className="items-center md:flex hidden">
+                <PaginationItem>
+                  <PaginationLink href="#">3</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationEllipsis />
+                </PaginationItem>
+              </div>
+              <PaginationItem>
+                <PaginationNext href="#" />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>{" "}
+        </div>
         <BlogGrid>
           <BlogCard
             PostTitle="Unlocking the Power of People Analytics"
@@ -236,37 +291,37 @@ export default function Home() {
             PostDescription="Tips for using social media analytics to measure ROI and refine your social media strategy."
             PostTags={["social media", "analytics", "ROI"]}
           />
+        </BlogGrid>
 
-          </BlogGrid>
-          
-    <div className="py-8">
-              <Pagination>
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious href="#" />
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#">1</PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#" isActive>
-                      2
-                    </PaginationLink>
-                  </PaginationItem>
-                  <div className="items-center md:flex hidden">
-                    <PaginationItem>
-                      <PaginationLink href="#">3</PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationEllipsis />
-                    </PaginationItem>
-                  </div>
-                  <PaginationItem>
-                    <PaginationNext href="#" />
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>  </div>
-    </Container></>
-    
+        <div className="py-8">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#" isActive>
+                  2
+                </PaginationLink>
+              </PaginationItem>
+              <div className="items-center md:flex hidden">
+                <PaginationItem>
+                  <PaginationLink href="#">3</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationEllipsis />
+                </PaginationItem>
+              </div>
+              <PaginationItem>
+                <PaginationNext href="#" />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>{" "}
+        </div>
+      </Container>
+    </>
   );
 }

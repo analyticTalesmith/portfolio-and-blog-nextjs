@@ -2,7 +2,7 @@
 import { ATLogo } from '@/components/svgs/logo';
 import Link from "next/link";
 import { MobileNavSheet } from './mobilenavsheet';
-import { ColorModeToggle } from '../ColorModeToggle';
+import { ColorModeToggle } from './ColorModeToggle';
 
 const WebsiteHeading = () => {
     

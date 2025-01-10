@@ -1,5 +1,5 @@
 import React from "react"
-import BlogCard from "./blogcard"
+import BlogCard from "../cards/blogcard"
 
 type BlogGridProps = {
     children: React.ReactElement<typeof BlogCard>[];
