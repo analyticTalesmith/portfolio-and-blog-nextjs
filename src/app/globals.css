@@ -88,6 +88,20 @@ html {
     gap: 16px;
   }
 
+  .brut-border {
+    @apply border-border border-2 
+  }
+
+  .brut-grid
+  {
+    grid-auto-rows: calc(100vw / 8);
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .brut-shadow {
+    @apply shadow-shadow
+  }
+
   :root {
     /* General Colors */
     --color-border: #000;

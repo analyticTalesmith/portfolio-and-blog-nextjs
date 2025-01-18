@@ -36,7 +36,7 @@ const BlogCard = ({
               <div className="relative w-full md:h-36 lg:h-48">
                 <Image
                   className="hidden md:block lg:h-48 md:h-36 md:border-b-2 border-primary-border w-full object-cover object-center"
-                  src="/images/placeholder.png"
+                  src="/static/images/placeholder.png"
                   alt="blog"
                   layout="fill"
                   objectFit="cover"

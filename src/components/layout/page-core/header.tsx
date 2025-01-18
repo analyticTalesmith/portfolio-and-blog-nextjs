@@ -26,13 +26,13 @@ const WebsiteHeading = () => {
     return(
         <header className="text-on-primary-card bg-primary-card border-b-6 border-border min-w-fit">
             <div className="container mx-auto flex p-4 flex-row items-center">
-                <Link href="/" className="flex font-medium items-center text-gray-900">
+                <Link href="/" className="flex font-black font-space-grotesk items-center text-gray-900">
                     {/* Icon */}
                     <ATLogo className="h-10 ml-1 mr-auto md:mr-0 md:ml-0" />
                     <span className="hidden md:block ml-2 mr-2 text-2xl tracking-tight text-primary">Analytic Talesmith</span>
                 </Link>
                     {/* MD and above nav*/}
-                    <nav className="hidden md:block md:mr-auto md:ml-4 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+                    <nav className="hidden md:block md:mr-auto md:ml-4 md:pl-4 md:border-l md:border-primary-border flex flex-wrap items-center text-base justify-center">
                         <ul className="flex flex-row mt-4 font-medium ml-auto md:mt-0">
                                         {navLinks.map(({ route, text }) => (
                                             <li

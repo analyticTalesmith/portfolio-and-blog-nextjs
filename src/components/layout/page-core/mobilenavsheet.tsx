@@ -33,7 +33,7 @@ const MobileNavSheet = ({ links }: { links: linkData[] }) => {
                 {links.map(({ route, text }) => (
                   <li
                     key={route}
-                    className="px-4 cursor-pointer capitalize py-6 text-4xl"
+                    className="px-4 cursor-pointer font-bold capitalize py-6 text-4xl"
                   >
                     <Link href={route}>{text}</Link>
                   </li>
