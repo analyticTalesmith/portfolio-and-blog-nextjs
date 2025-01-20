@@ -24,12 +24,12 @@ const WebsiteHeading = () => {
     ];
 
     return(
-        <header className="text-on-primary-card bg-primary-card border-b-6 border-border min-w-fit">
+        <header className="text-on-primary-card bg-primary-card border-b-6 border-primary-border min-w-fit">
             <div className="container mx-auto flex p-4 flex-row items-center">
-                <Link href="/" className="flex font-black font-space-grotesk items-center text-gray-900">
+                <Link href="/" className="flex font-black font-space-grotesk items-center text-primary-vibrant">
                     {/* Icon */}
                     <ATLogo className="h-10 ml-1 mr-auto md:mr-0 md:ml-0" />
-                    <span className="hidden md:block ml-2 mr-2 text-2xl tracking-tight text-primary">Analytic Talesmith</span>
+                    <span className="hidden md:block ml-2 mr-2 text-2xl tracking-tight">Analytic Talesmith</span>
                 </Link>
                     {/* MD and above nav*/}
                     <nav className="hidden md:block md:mr-auto md:ml-4 md:pl-4 md:border-l md:border-primary-border flex flex-wrap items-center text-base justify-center">
@@ -37,7 +37,7 @@ const WebsiteHeading = () => {
                                         {navLinks.map(({ route, text }) => (
                                             <li
                                                 key={route}
-                                                className="font-spaceGrotesk capitalize block py-2 pr-4 pl-3 text-on-surface-container rounded lg:bg-transparent hover:text-primary-container duration-200 hover:underline"
+                                                className="font-spaceGrotesk text-lg uppercase block py-2 pr-4 pl-3 text-on-surface-container rounded lg:bg-transparent hover:text-primary-container duration-200 hover:underline"
                                             >
                                                 <Link href={route}>{text}</Link>
                                             </li>

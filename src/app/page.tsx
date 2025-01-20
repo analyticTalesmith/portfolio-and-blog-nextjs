@@ -91,8 +91,8 @@ export default function Home() {
           </form>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Button buttoncolor="danger">Cancel</Button>
-          <Button variant="default" buttoncolor="secondary">
+          <Button>Cancel</Button>
+          <Button>
             Deploy
           </Button>
         </CardFooter>

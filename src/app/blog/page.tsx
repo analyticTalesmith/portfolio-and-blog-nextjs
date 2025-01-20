@@ -1,6 +1,6 @@
 // blog
 
-import Container from "@/components/ui/container";
+import Container from "../../components/ui/container";
 import BlogCard from "@/components/layout/cards/blogcard";
 import BlogGrid from "@/components/layout/blog/bloggrid";
 

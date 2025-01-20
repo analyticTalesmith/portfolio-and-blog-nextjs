@@ -4,8 +4,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import WebsiteHeading from "@/components/layout/page-core/header";
 import ContentWrapper from "@/components/layout/page-core/contentwrapper";
 import WebsiteFooter from "@/components/layout/page-core/footer";
-import ScrollToTopButton from "@/components/ui/scrolltotopbutton";
-import ScrollProgressBar from "@/components/ui/scroll-progress-bar";
+import ScrollToTopButton from "../components/ui/scrolltotopbutton";
+import ScrollProgressBar from "../components/ui/scroll-progress-bar";
 
 import "./globals.css";
 

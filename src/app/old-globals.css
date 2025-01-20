@@ -1,0 +1,593 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1 {
+    @apply font-space-grotesk font-light text-5xl text-gradient-1 tracking-tighter;
+  }
+
+  h2 {
+    @apply font-space-grotesk font-light text-4xl text-gradient-2 tracking-tight;
+  }
+
+  h3 {
+    @apply font-space-grotesk font-normal text-3xl text-gradient-3 tracking-normal;
+  }
+
+  h4 {
+    @apply font-space-grotesk font-normal text-2xl text-gradient-4  tracking-wide;
+  }
+
+  h5 {
+    @apply font-space-grotesk font-normal text-xl text-gradient-5 tracking-wider;
+  }
+
+  h6 {
+    @apply font-space-grotesk font-medium text-lg text-gradient-6 tracking-widest;
+  }
+
+  p {
+    @apply font-jost font-normal text-base tracking-wide;
+  }
+
+  caption {
+    @apply font-jost font-normal text-xs tracking-3x-wide;
+  }
+
+  figcaption {
+    @apply font-jost font-normal text-xs tracking-3x-wide;
+  }
+
+  button {
+    @apply font-jost font-medium text-base tracking-x-wide uppercase;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    --dot-size: 1px;
+    --dot-space: 25px;
+    background: linear-gradient(
+          90deg,
+          var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+          transparent 1%
+        )
+        center / var(--dot-space) var(--dot-space),
+      linear-gradient(
+          var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+          transparent 1%
+        )
+        center / var(--dot-space) var(--dot-space),
+      var(--dot-color);
+    @apply text-foreground;
+  }
+
+  div,
+  li,
+  ol {
+    @apply font-jost;
+  }
+
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .brut-border {
+    @apply border-border border-2 
+  }
+
+  .brut-grid
+  {
+    grid-auto-rows: calc(100vw / 8);
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .brut-shadow {
+    @apply shadow-shadow
+  }
+
+  :root {
+    /* General Colors */
+    --color-border: #000;
+    --dot-bg: hsl(21.26, 5%, 98%);
+    --dot-color: hsl(21.26, 100%, 75%);
+
+    /* General Attributes */
+    --radius: 0.5rem;
+    --border-radius: 5px;
+    --box-shadow-x: 4px;
+    --box-shadow-y: 4px;
+    --reverse-box-shadow-x: -4px;
+    --reverse-box-shadow-y: -4px;
+    --base-font-weight: 500;
+    --heading-font-weight: 700;
+
+    *::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #fff;
+      border-radius: 0px;
+      border-left: 2px solid #000;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #000;
+      border-radius: 0px;
+      border: 2cap solid #000;
+    }
+
+    --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px
+      var(--color-border);
+
+    /* Contrast */
+    --color-contrast-background: 0 0% 100%;
+    --color-contrast-foreground: 0 0% 10%;
+
+    /* Primary */
+    --color-primary-background: 21.26 5% 96%;
+    --color-primary-foreground: 21.82 78.57% 5.49%;
+
+    --color-primary-primary: 21.26 100% 56.27%;
+    --color-primary-primary-foreground: 21.82 78.57% 5.49%;
+
+    --color-primary-card: 21.82 100% 97.84%;
+    --color-primary-card-foreground: 21.82 78.57% 5.49%;
+
+    --color-primary-popover: 0 0% 100%;
+    --color-primary-popover-foreground: 21.82 78.57% 5.49%;
+
+    --color-primary-secondary: 20 100% 93.53%;
+    --color-primary-secondary-foreground: 0 0% 0%;
+
+    --color-primary-muted: 21.82 100% 95.69%;
+    --color-primary-muted-foreground: 0 0% 40%;
+
+    --color-primary-accent: 21.82 100% 95.69%;
+    --color-primary-accent-foreground: 21.82 76.74% 8.43%;
+
+    --color-primary-destructive: 0 84.2% 60.2%;
+    --color-primary-destructive-foreground: 210 40% 98%;
+
+    --color-primary-border: 21.33 100% 91.18%;
+    --color-primary-input: 21.43 30.43% 81.96%;
+    --color-primary-ring: 21.26 100% 56.27%;
+
+    --color-primary-chart-1: 21.26 100% 56.27%;
+    --color-primary-chart-2: 21.47 100% 62.75%;
+    --color-primary-chart-3: 21.1 100% 71.57%;
+    --color-primary-chart-4: 21.46 100% 75.88%;
+    --color-primary-chart-5: 21 100% 80.39%;
+
+    /* Secondary */
+    --color-secondary-background: 0 0% 100%;
+    --color-secondary-foreground: 274.29 38.89% 7.06%;
+
+    --color-secondary-primary: 272.37 98.58% 72.35%;
+    --color-secondary-primary-foreground: 274.29 38.89% 7.06%;
+
+    --color-secondary-card: 274.29 100% 98.63%;
+    --color-secondary-card-foreground: 274.29 38.89% 7.06%;
+
+    --color-secondary-popover: 0 0% 100%;
+    --color-secondary-popover-foreground: 274.29 38.89% 7.06%;
+
+    --color-secondary-secondary: 271.43 100% 95.88%;
+    --color-secondary-secondary-foreground: 0 0% 0%;
+
+    --color-secondary-muted: 274.29 100% 97.25%;
+    --color-secondary-muted-foreground: 0 0% 40%;
+
+    --color-secondary-accent: 274.29 100% 97.25%;
+    --color-secondary-accent-foreground: 274.29 38.18% 10.78%;
+
+    --color-secondary-destructive: 0 84.2% 60.2%;
+    --color-secondary-destructive-foreground: 210 40% 98%;
+
+    --color-secondary-border: 272.14 100% 94.51%;
+    --color-secondary-input: 271.76 20.99% 84.12%;
+    --color-secondary-ring: 272.37 98.58% 72.35%;
+
+    --color-secondary-chart-1: 272.37 98.58% 72.35%;
+    --color-secondary-chart-2: 272.54 98.33% 76.47%;
+    --color-secondary-chart-3: 272.67 97.83% 81.96%;
+    --color-secondary-chart-4: 272.37 97.44% 84.71%;
+    --color-secondary-chart-5: 272.38 100% 87.65%;
+
+    /* Success */
+    --color-success-background: 0 0% 100%;
+    --color-success-foreground: 131.25 53.33% 5.88%;
+
+    --color-success-primary: 131.15 72.9% 58.04%;
+    --color-success-primary-foreground: 131.25 53.33% 5.88%;
+
+    --color-success-card: 127.5 80% 98.04%;
+    --color-success-card-foreground: 131.25 53.33% 5.88%;
+
+    --color-success-popover: 0 0% 100%;
+    --color-success-popover-foreground: 131.25 53.33% 5.88%;
+
+    --color-success-secondary: 132.5 75% 93.73%;
+    --color-success-secondary-foreground: 0 0% 0%;
+
+    --color-success-muted: 128 71.43% 95.88%;
+    --color-success-muted-foreground: 0 0% 40%;
+
+    --color-success-accent: 128 71.43% 95.88%;
+    --color-success-accent-foreground: 130.43 51.11% 8.82%;
+
+    --color-success-destructive: 0 84.2% 60.2%;
+    --color-success-destructive-foreground: 210 40% 98%;
+
+    --color-success-border: 131.61 72.09% 91.57%;
+    --color-success-input: 132 22.22% 82.35%;
+    --color-success-ring: 131.15 72.9% 58.04%;
+
+    --color-success-chart-1: 131.15 72.9% 58.04%;
+    --color-success-chart-2: 130.91 72.53% 64.31%;
+    --color-success-chart-3: 131.29 72.66% 72.75%;
+    --color-success-chart-4: 131.16 72.88% 76.86%;
+    --color-success-chart-5: 131.14 72.92% 81.18%;
+
+    /* Info */
+    --color-info-background: 0 0% 100%;
+    --color-info-foreground: 199.09 84.62% 5.1%;
+
+    --color-info-primary: 200.09 89.34% 52.16%;
+    --color-info-primary-foreground: 199.09 84.62% 5.1%;
+
+    --color-info-card: 196.36 84.62% 97.45%;
+    --color-info-card-foreground: 199.09 84.62% 5.1%;
+
+    --color-info-popover: 0 0% 100%;
+    --color-info-popover-foreground: 199.09 84.62% 5.1%;
+
+    --color-info-secondary: 200 89.19% 92.75%;
+    --color-info-secondary-foreground: 0 0% 0%;
+
+    --color-info-muted: 201.82 91.67% 95.29%;
+    --color-info-muted-foreground: 0 0% 40%;
+
+    --color-info-accent: 201.82 91.67% 95.29%;
+    --color-info-accent-foreground: 200.63 80% 7.84%;
+
+    --color-info-destructive: 0 84.2% 60.2%;
+    --color-info-destructive-foreground: 210 40% 98%;
+
+    --color-info-border: 199.53 87.76% 90.39%;
+    --color-info-input: 201.43 29.79% 81.57%;
+    --color-info-ring: 200.09 89.34% 52.16%;
+
+    --color-info-chart-1: 200.09 89.34% 52.16%;
+    --color-info-chart-2: 200.11 89.37% 59.41%;
+    --color-info-chart-3: 200.28 89.87% 69.02%;
+    --color-info-chart-4: 200 89.55% 73.73%;
+    --color-info-chart-5: 200.2 89.09% 78.43%;
+
+    /* Warning */
+    --color-warning-background: 0 0% 100%;
+    --color-warning-foreground: 55 92.31% 5.1%;
+
+    --color-warning-primary: 54 100% 52.94%;
+    --color-warning-primary-foreground: 55 92.31% 5.1%;
+
+    --color-warning-card: 55 100% 97.65%;
+    --color-warning-card-foreground: 55 92.31% 5.1%;
+
+    --color-warning-popover: 0 0% 100%;
+    --color-warning-popover-foreground: 55 92.31% 5.1%;
+
+    --color-warning-secondary: 53.33 100% 92.94%;
+    --color-warning-secondary-foreground: 0 0% 0%;
+
+    --color-warning-muted: 55 100% 95.29%;
+    --color-warning-muted-foreground: 0 0% 40%;
+
+    --color-warning-accent: 55 100% 95.29%;
+    --color-warning-accent-foreground: 55 90% 7.84%;
+
+    --color-warning-destructive: 0 84.2% 60.2%;
+    --color-warning-destructive-foreground: 210 40% 98%;
+
+    --color-warning-border: 53.75 100% 90.59%;
+    --color-warning-input: 54 31.91% 81.57%;
+    --color-warning-ring: 54 100% 52.94%;
+
+    --color-warning-chart-1: 54 100% 52.94%;
+    --color-warning-chart-2: 54.12 100% 60%;
+    --color-warning-chart-3: 53.85 100% 69.41%;
+    --color-warning-chart-4: 54.09 100% 74.12%;
+    --color-warning-chart-5: 53.89 100% 78.82%;
+
+    /* Danger */
+
+    --color-danger-background: 0 0% 100%;
+    --color-danger-foreground: 0 42.86% 6.86%;
+
+    --color-danger-primary: 358.87 100% 68.82%;
+    --color-danger-primary-foreground: 0 42.86% 6.86%;
+
+    --color-danger-card: 0 100% 98.43%;
+    --color-danger-card-foreground: 0 42.86% 6.86%;
+
+    --color-danger-popover: 0 0% 100%;
+    --color-danger-popover-foreground: 0 42.86% 6.86%;
+
+    --color-danger-secondary: 357.5 100% 95.29%;
+    --color-danger-secondary-foreground: 0 0% 0%;
+
+    --color-danger-muted: 0 100% 96.86%;
+    --color-danger-muted-foreground: 0 0% 40%;
+
+    --color-danger-accent: 0 100% 96.86%;
+    --color-danger-accent-foreground: 357.5 46.15% 10.2%;
+
+    --color-danger-destructive: 0 84.2% 60.2%;
+    --color-danger-destructive-foreground: 210 40% 98%;
+
+    --color-danger-border: 358.13 100% 93.73%;
+    --color-danger-input: 357 23.81% 83.53%;
+    --color-danger-ring: 358.87 100% 68.82%;
+
+    --color-danger-chart-1: 358.87 100% 68.82%;
+    --color-danger-chart-2: 359.11 100% 73.53%;
+    --color-danger-chart-3: 358.83 100% 79.8%;
+    --color-danger-chart-4: 359.31 100% 82.94%;
+    --color-danger-chart-5: 358.33 100% 85.88%;
+  }
+  .dark {
+    /* General Attributes */
+    --color-border: #000;
+    --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px
+      var(--color-border);
+    --dot-bg: hsl(0, 0%, 5%);
+    --dot-color: hsl(21.26, 100%, 25%);
+
+    *::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: #000;
+      border-radius: 0px;
+      border-left: 2px solid #000;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: hsl(21.26 100% 56.27%);
+      border-radius: 0px;
+      border: 2cap solid hsl(21.26 100% 56.27%);
+    }
+
+    /* Contrast */
+    --color-contrast-background: 0 0% 10%;
+    --color-contrast-foreground: 0 0% 100%;
+
+    /* Primary */
+    --color-primary-background: 0 0% 4%;
+    --color-primary-foreground: 20 100% 93.53%;
+
+    --color-primary-primary: 21.26 100% 56.27%;
+    --color-primary-primary-foreground: 21.82 78.57% 5.49%;
+
+    --color-primary-card: 20 29.03% 6.08%;
+    --color-primary-card-foreground: 20 100% 93.53%;
+
+    --color-primary-popover: 0 0% 0%;
+    --color-primary-popover-foreground: 20 100% 93.53%;
+
+    --color-primary-secondary: 21.54 78% 19.61%;
+    --color-primary-secondary-foreground: 0 0% 100%;
+
+    --color-primary-muted: 0 0% 9.8%;
+    --color-primary-muted-foreground: 0 0% 50.2%;
+
+    --color-primary-accent: 21.54 78% 19.61%;
+    --color-primary-accent-foreground: 20 100% 93.53%;
+
+    --color-primary-destructive: 0 84.2% 60.2%;
+    --color-primary-destructive-foreground: 210 40% 98%;
+
+    --color-primary-border: 21.33 78.95% 11.18%;
+    --color-primary-input: 20.87 21.9% 20.59%;
+    --color-primary-ring: 21.26 100% 56.27%;
+
+    --color-primary-chart-1: 21.26 100% 56.27%;
+    --color-primary-chart-2: 21.16 77.87% 47.84%;
+    --color-primary-chart-3: 21.1 77.54% 36.67%;
+    --color-primary-chart-4: 21.15 77.22% 30.98%;
+    --color-primary-chart-5: 21.39 78.29% 25.29%;
+
+    /* Secondary */
+    --color-secondary-background: 0 0% 0%;
+    --color-secondary-foreground: 271.43 100% 95.88%;
+
+    --color-secondary-primary: 272.37 98.58% 72.35%;
+    --color-secondary-primary-foreground: 274.29 38.89% 7.06%;
+
+    --color-secondary-card: 270 17.65% 6.67%;
+    --color-secondary-card-foreground: 271.43 100% 95.88%;
+
+    --color-secondary-popover: 0 0% 0%;
+    --color-secondary-popover-foreground: 271.43 100% 95.88%;
+
+    --color-secondary-secondary: 273.06 37.98% 25.29%;
+    --color-secondary-secondary-foreground: 0 0% 100%;
+
+    --color-secondary-muted: 0 0% 9.8%;
+    --color-secondary-muted-foreground: 0 0% 50.2%;
+
+    --color-secondary-accent: 273.06 37.98% 25.29%;
+    --color-secondary-accent-foreground: 271.43 100% 95.88%;
+
+    --color-secondary-destructive: 0 84.2% 60.2%;
+    --color-secondary-destructive-foreground: 210 40% 98%;
+
+    --color-secondary-border: 272.14 37.84% 14.51%;
+    --color-secondary-input: 270 12.28% 22.35%;
+    --color-secondary-ring: 272.37 98.58% 72.35%;
+
+    --color-secondary-chart-1: 272.37 98.58% 72.35%;
+    --color-secondary-chart-2: 272.54 60.2% 61.57%;
+    --color-secondary-chart-3: 272.67 37.5% 47.06%;
+    --color-secondary-chart-4: 272.73 37.93% 39.8%;
+    --color-secondary-chart-5: 271.94 37.35% 32.55%;
+
+    /* Success */
+    --color-success-background: 0 0% 0%;
+    --color-success-foreground: 132.5 75% 93.73%;
+
+    --color-success-primary: 131.15 72.9% 58.04%;
+    --color-success-primary-foreground: 131.25 53.33% 5.88%;
+
+    --color-success-card: 137.14 22.58% 6.08%;
+    --color-success-card-foreground: 132.5 75% 93.73%;
+
+    --color-success-popover: 0 0% 0%;
+    --color-success-popover-foreground: 132.5 75% 93.73%;
+
+    --color-success-secondary: 131.11 51.92% 20.39%;
+    --color-success-secondary-foreground: 0 0% 100%;
+
+    --color-success-muted: 0 0% 9.8%;
+    --color-success-muted-foreground: 0 0% 50.2%;
+
+    --color-success-accent: 131.11 51.92% 20.39%;
+    --color-success-accent-foreground: 132.5 75% 93.73%;
+
+    --color-success-destructive: 0 84.2% 60.2%;
+    --color-success-destructive-foreground: 210 40% 98%;
+
+    --color-success-border: 131.61 52.54% 11.57%;
+    --color-success-input: 131.25 15.09% 20.78%;
+    --color-success-ring: 131.15 72.9% 58.04%;
+
+    --color-success-chart-1: 131.15 72.9% 58.04%;
+    --color-success-chart-2: 130.91 52.38% 49.41%;
+    --color-success-chart-3: 130.69 52.33% 37.84%;
+    --color-success-chart-4: 130.59 52.15% 31.96%;
+    --color-success-chart-5: 131.83 53.38% 26.08%;
+
+    /* Info */
+    --color-info-background: 0 0% 0%;
+    --color-info-foreground: 200 89.19% 92.75%;
+
+    --color-info-primary: 200.09 89.34% 52.16%;
+    --color-info-primary-foreground: 199.09 84.62% 5.1%;
+
+    --color-info-card: 202.5 26.67% 5.88%;
+    --color-info-card-foreground: 200 89.19% 92.75%;
+
+    --color-info-popover: 0 0% 0%;
+    --color-info-popover-foreground: 200 89.19% 92.75%;
+
+    --color-info-secondary: 200.26 82.8% 18.24%;
+    --color-info-secondary-foreground: 0 0% 100%;
+
+    --color-info-muted: 0 0% 9.8%;
+    --color-info-muted-foreground: 0 0% 50.2%;
+
+    --color-info-accent: 200.26 82.8% 18.24%;
+    --color-info-accent-foreground: 200 89.19% 92.75%;
+
+    --color-info-destructive: 0 84.2% 60.2%;
+    --color-info-destructive-foreground: 210 40% 98%;
+
+    --color-info-border: 199.53 81.13% 10.39%;
+    --color-info-input: 200 20.39% 20.2%;
+    --color-info-ring: 200.09 89.34% 52.16%;
+
+    --color-info-chart-1: 200.09 89.34% 52.16%;
+    --color-info-chart-2: 200 82.3% 44.31%;
+    --color-info-chart-3: 200 81.5% 33.92%;
+    --color-info-chart-4: 200 82.19% 28.63%;
+    --color-info-chart-5: 200.2 81.67% 23.53%;
+
+    /* Warning */
+    --color-warning-background: 0 0% 0%;
+    --color-warning-foreground: 53.33 100% 92.94%;
+
+    --color-warning-primary: 54 100% 52.94%;
+    --color-warning-primary-foreground: 55 92.31% 5.1%;
+
+    --color-warning-card: 54 33.33% 5.88%;
+    --color-warning-card-foreground: 53.33 100% 92.94%;
+
+    --color-warning-popover: 0 0% 0%;
+    --color-warning-popover-foreground: 53.33 100% 92.94%;
+
+    --color-warning-secondary: 54.29 89.36% 18.43%;
+    --color-warning-secondary-foreground: 0 0% 100%;
+
+    --color-warning-muted: 0 0% 9.8%;
+    --color-warning-muted-foreground: 0 0% 50.2%;
+
+    --color-warning-accent: 54.29 89.36% 18.43%;
+    --color-warning-accent-foreground: 53.33 100% 92.94%;
+
+    --color-warning-destructive: 0 84.2% 60.2%;
+    --color-warning-destructive-foreground: 210 40% 98%;
+
+    --color-warning-border: 53.75 88.89% 10.59%;
+    --color-warning-input: 52.5 23.08% 20.39%;
+    --color-warning-ring: 54 100% 52.94%;
+
+    --color-warning-chart-1: 54 100% 52.94%;
+    --color-warning-chart-2: 53.82 88.7% 45.1%;
+    --color-warning-chart-3: 53.85 88.64% 34.51%;
+    --color-warning-chart-4: 54.09 89.19% 29.02%;
+    --color-warning-chart-5: 53.89 88.52% 23.92%;
+
+    /* Danger */
+    --color-danger-background: 0 0% 0%;
+    --color-danger-foreground: 357.5 100% 95.29%;
+
+    --color-danger-primary: 358.87 100% 68.82%;
+    --color-danger-primary-foreground: 0 42.86% 6.86%;
+
+    --color-danger-card: 351.43 21.21% 6.47%;
+    --color-danger-card-foreground: 357.5 100% 95.29%;
+
+    --color-danger-popover: 0 0% 0%;
+    --color-danger-popover-foreground: 357.5 100% 95.29%;
+
+    --color-danger-secondary: 358.91 44.72% 24.12%;
+    --color-danger-secondary-foreground: 0 0% 100%;
+
+    --color-danger-muted: 0 0% 9.8%;
+    --color-danger-muted-foreground: 0 0% 50.2%;
+
+    --color-danger-accent: 358.91 44.72% 24.12%;
+    --color-danger-accent-foreground: 357.5 100% 95.29%;
+
+    --color-danger-destructive: 0 84.2% 60.2%;
+    --color-danger-destructive-foreground: 210 40% 98%;
+
+    --color-danger-border: 358.13 45.71% 13.73%;
+    --color-danger-input: 0 14.29% 21.96%;
+    --color-danger-ring: 358.87 100% 68.82%;
+
+    --color-danger-chart-1: 358.87 100% 68.82%;
+    --color-danger-chart-2: 359.11 63.98% 58.63%;
+    --color-danger-chart-3: 358.85 45.61% 44.71%;
+    --color-danger-chart-4: 359.31 45.08% 37.84%;
+    --color-danger-chart-5: 358.33 45.57% 30.98%;
+  }
+}
