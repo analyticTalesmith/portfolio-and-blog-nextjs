@@ -1,4 +1,4 @@
-import Container from "../../components/ui/container";
+import ConstrainedWidthBlock from "@/components/layout/sections/constrained-width-block";
 
 // about
 
@@ -63,48 +63,48 @@ Whether I'm performing statistical analysis on experimental findings; extracting
 }
 
 import Image from "next/image";
-import Link from "next/link";
-import { FC, ReactElement } from "react";
+// import Link from "next/link";
+// import { FC } from "react";
 
-type SVGComponent = (
-  props: React.SVGProps<SVGSVGElement>
-) => React.ReactElement;
+// type SVGComponent = (
+//   props: React.SVGProps<SVGSVGElement>
+// ) => React.ReactElement;
 
-interface IconProps {
-  className?: string;
-}
+// interface IconProps {
+//   className?: string;
+// }
 
-interface SocialLinkProps {
-  className?: string;
-  href: string;
-  children: React.ReactNode;
-  icon: React.ComponentType<IconProps>; // or React.FC<{}> for functional components
-}
+// interface SocialLinkProps {
+//   className?: string;
+//   href: string;
+//   children: React.ReactNode;
+//   icon: React.ComponentType<IconProps>; // or React.FC<{}> for functional components
+// }
 
-const SocialLink: FC<SocialLinkProps> = ({
-  className,
-  href,
-  children,
-  icon: Icon,
-}) => {
-  return (
-    <li className={className + " flex"}>
-      <Link
-        href={href}
-        className="group flex text-sm font-medium text-on-background my-2"
-      >
-        <Icon className="h-6 w-6 flex-none transition group-hover:fill-primary" />
-        <span className="max-lg:hidden lg:ml-4 transition group-hover:underline group-hover:text-primary">
-          {children}
-        </span>
-      </Link>
-    </li>
-  );
-};
+// const SocialLink: FC<SocialLinkProps> = ({
+//   className,
+//   href,
+//   children,
+//   icon: Icon,
+// }) => {
+//   return (
+//     <li className={className + " flex"}>
+//       <Link
+//         href={href}
+//         className="group flex text-sm font-medium text-on-background my-2"
+//       >
+//         <Icon className="h-6 w-6 flex-none transition group-hover:fill-primary" />
+//         <span className="max-lg:hidden lg:ml-4 transition group-hover:underline group-hover:text-primary">
+//           {children}
+//         </span>
+//       </Link>
+//     </li>
+//   );
+// };
 
 const About = () => {
   return (
-    <Container>
+    <ConstrainedWidthBlock>
       <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:grid-rows-[auto_1fr]">
         <div className="-order-1 lg:pl-20">
           <div className="max-w-full mx-auto lg:max-w-xs px-2.5">
@@ -127,7 +127,7 @@ const About = () => {
                 passion for solving problems. My journey has been anything but
                 linear, weaving through the fields of game
                 design, copywriting, digital marketing, microbiology, bioinformatics, psychology, data
-                analytics, and computer science. Along the way, I’ve honed a
+                analytics, and computer science. Along the way, I&apos;ve honed a
                 blend of creative and technical skills that enable me to
                 explore, analyze, and communicate complex ideas in a way that
                 resonates with diverse audiences.
@@ -139,14 +139,14 @@ const About = () => {
                 datasets to uncover insights, and designing tools that make
                 complex processes more intuitive. Whether optimizing a website
                 for search engines, building data pipelines, or writing about
-                the intersections of technology and human behavior, I’m always
+                the intersections of technology and human behavior, I&apos;m always
                 eager to learn and grow.
               </p>
 
               <p>
                 This site is a place where I share my thoughts, projects, and
                 insights. If you share my curiosity or see opportunities for
-                collaboration, feel free to reach out—I’d love to connect.
+                collaboration, feel free to reach out—I&apos;d love to connect.
               </p>
             </div>
           </div>
@@ -162,7 +162,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </ConstrainedWidthBlock>
   );
 };
 

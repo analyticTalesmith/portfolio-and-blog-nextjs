@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import GradientHeading from "@/components/layout/headings/gradient-heading";
 
 import {
   Card,
@@ -56,7 +55,6 @@ export default function Home() {
             <HoverCard
               variant="primary"
               icon={<Newspaper className="w-full h-full" />}
-              number={1}
               heading="Blog"
               description="Science with a Soul, Data with a Story"
               bgImage="/static/images/typewriter-florian-klauer-unsplash.jpg" // Replace with your image URL
@@ -66,7 +64,6 @@ export default function Home() {
             <HoverCard
               variant="secondary"
               icon={<BriefcaseBusiness className="w-full h-full" />}
-              number={2}
               heading="Portfolio"
               description="Bridging Organizations and Humanity Through Data-Driven Actionable Insights"
               bgImage="/static/images/design-hal-gatewood-unsplash.jpg" // Replace with your image URL
@@ -76,8 +73,7 @@ export default function Home() {
             <HoverCard
               variant="tertiary"
               icon={<CircleUserRound className="w-full h-full" />}
-              number={2}
-              heading="About Me"
+              heading="About"
               description="A Storyteller with a Passion for Data and People"
               bgImage="/static/images/headshot.png" // Replace with your image URL
             />

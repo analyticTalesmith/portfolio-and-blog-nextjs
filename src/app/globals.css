@@ -14,80 +14,6 @@ html {
     -webkit-font-smoothing: antialiased;
   }
 
-  .hover-card {
-  position: relative;
-  width: 250px;
-  height: 300px;
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.hover-card-content {
-  z-index: 1;
-}
-
-.hover-card-icon {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.hover-card-number {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.hover-card-heading {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.hover-card-hover-content {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.hover-card:hover .hover-card-hover-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hover-card-rule {
-  border: none;
-  border-top: 1px solid #000;
-  margin: 10px 0;
-}
-
-.hover-card-description {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.hover-card-arrow {
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 10px;
-  color: inherit;
-}
-
-.hover-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-  
   h1 {
     @apply font-space-grotesk font-light text-5xl text-gradient-1 tracking-tighter;
   }
@@ -162,16 +88,14 @@ html {
     gap: 16px;
   }
 
-
   .brut-grid {
     grid-auto-rows: calc(100vw / 8);
     grid-template-columns: repeat(8, 1fr);
   }
 
   .constrained-width {
-    @apply mx-auto w-full max-w-7xl 
+    @apply mx-auto w-full max-w-7xl;
   }
-
 
   :root {
     --border-radius: 0.5rem;
