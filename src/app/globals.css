@@ -14,6 +14,80 @@ html {
     -webkit-font-smoothing: antialiased;
   }
 
+  .hover-card {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hover-card-content {
+  z-index: 1;
+}
+
+.hover-card-icon {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.hover-card-number {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hover-card-heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hover-card-hover-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hover-card:hover .hover-card-hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-card-rule {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 10px 0;
+}
+
+.hover-card-description {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hover-card-arrow {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  color: inherit;
+}
+
+.hover-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+  
   h1 {
     @apply font-space-grotesk font-light text-5xl text-gradient-1 tracking-tighter;
   }
@@ -88,33 +162,30 @@ html {
     gap: 16px;
   }
 
-  .brut-border {
-    @apply border-border border-2 
-  }
 
-  .brut-grid
-  {
+  .brut-grid {
     grid-auto-rows: calc(100vw / 8);
     grid-template-columns: repeat(8, 1fr);
   }
 
-  .brut-shadow {
-    @apply shadow-shadow
+  .constrained-width {
+    @apply mx-auto w-full max-w-7xl 
   }
+
 
   :root {
     --border-radius: 0.5rem;
-  
+
     --color-ring-base: 0 0 0;
     --color-ring-offset: 255 255 255;
-  
+
     --color-gradient-1: 215 89 26;
     --color-gradient-2: 210 41 80;
     --color-gradient-3: 163 31 129;
     --color-gradient-4: 75 46 154;
     --color-gradient-5: 0 106 170;
     --color-gradient-6: 0 144 108;
-  
+
     --color-primary-100: 255 239 217;
     --color-primary-200: 255 219 179;
     --color-primary-300: 255 194 142;
@@ -177,7 +248,7 @@ html {
     --color-danger-600: 219 96 143;
     --color-danger-700: 183 66 122;
     --color-danger-800: 147 42 103;
-  
+
     /* Flex Colors - Light */
     --color-primary: 142 77 46;
     --color-surface-tint: 142 77 46;
@@ -385,18 +456,18 @@ html {
     --color-danger-chart-4: 140 73 92;
     --color-danger-chart-5: 115 59 75;
   }
-  
+
   .dark {
     --color-ring-base: 255 255 255;
     --color-ring-offset: 0 0 0;
-  
+
     --color-gradient-1: 255 149 86;
     --color-gradient-2: 255 101 140;
     --color-gradient-3: 223 91 189;
     --color-gradient-4: 135 106 214;
     --color-gradient-5: 20 166 230;
     --color-gradient-6: 30 204 168;
-  
+
     /* Flex Colors - Dark */
     --color-primary: 255 182 149;
     --color-surface-tint: 255 182 149;

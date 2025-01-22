@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Jost, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import WebsiteHeading from "@/components/layout/page-core/header";
-import ContentWrapper from "@/components/layout/page-core/contentwrapper";
 import WebsiteFooter from "@/components/layout/page-core/footer";
 import ScrollToTopButton from "../components/ui/scrolltotopbutton";
 import ScrollProgressBar from "../components/ui/scroll-progress-bar";
@@ -47,7 +46,7 @@ export default function RootLayout({
         >
           <WebsiteHeading />
           <ScrollProgressBar />
-          <ContentWrapper>{children}</ContentWrapper>
+          {children}
           <ScrollToTopButton />
           <WebsiteFooter />
         </ThemeProvider>

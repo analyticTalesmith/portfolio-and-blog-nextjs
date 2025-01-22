@@ -1,6 +1,5 @@
 // blog
-
-import Container from "../../components/ui/container";
+import ConstrainedWidthBlock from "@/components/layout/sections/constrained-width-block";
 import BlogCard from "@/components/layout/cards/blogcard";
 import BlogGrid from "@/components/layout/blog/bloggrid";
 
@@ -44,7 +43,7 @@ const featuresData = [
 
 export default function Home() {
   return (
-    <Container>
+    <ConstrainedWidthBlock>
       <div className="space-y-4 lg:space-y-20">
         <TripleFeature header="The Data Storycraft" features={featuresData}>
           <div className="space-y-2">
@@ -244,6 +243,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </Container>
+    </ConstrainedWidthBlock>
   );
 }
